@@ -10,6 +10,19 @@
 .bg{
     background-image: url(../../../public/assets/loginImage.jpg);
     background-position: center center;
+    max-width:100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: aqua;
+}
+
+.bg_login{
+    background-image: url(../../../public/assets/pexelsRegister.jpeg);
+    background-position: center center;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: aqua;
 }
 
 

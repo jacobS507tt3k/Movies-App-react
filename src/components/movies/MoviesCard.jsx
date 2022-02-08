@@ -6,8 +6,9 @@ export const MoviesCard = ({title, overview, image, release_date}) => {
 
   const imagen =`https://image.tmdb.org/t/p/w500/${image}`
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
+    <>
+    
+      <Card className="shadow-lg p-3 mb-5 bg-body rounded" style={{ width: "18rem" }}>
         <Card.Img variant="top" src={imagen} />
         <Card.Body>
           <Card.Title>{title}</Card.Title>
@@ -25,6 +26,7 @@ export const MoviesCard = ({title, overview, image, release_date}) => {
           <Card.Link href="#">Another Link</Card.Link>
         </Card.Body>
       </Card>
-    </div>
+     
+    </>
   );
 };

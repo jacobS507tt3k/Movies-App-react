@@ -6,7 +6,10 @@ import { MoviesCard } from './MoviesCard';
 
 export const TopMovies = () => {
 
-   const {results} = useFetchMovies();
+  const newMovies = {
+    val:"/movie/popular"
+  }
+   const {results} = useFetchMovies(newMovies);
 
   return (
       <div>

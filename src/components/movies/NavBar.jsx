@@ -8,15 +8,18 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
+import { startLogout } from "../../actions/auth";
 
 export const NavBar = () => {
 
+  const dispatch = useDispatch();
     const logoApp = "../assets/logoApp.png";
     const logOut = "../assets/logout.png";
 
     const handleLoginout = () => {
-      
+      dispatch(startLogout())
     }
   return (
     <div>
