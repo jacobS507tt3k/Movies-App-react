@@ -8,22 +8,32 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import { Link, NavLink } from "react-router-dom";
 
 export const NavBar = () => {
 
     const logoApp = "../assets/logoApp.png";
     const logOut = "../assets/logout.png";
+
+    const handleLoginout = () => {
+      
+    }
   return (
     <div>
       <Navbar className="navigation_bar fw-bold" bg="dark" expand="lg" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#"><img
+          <Navbar.Brand ><img
                 alt=""
                 src={logoApp}
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
-              />{" "}Calidad Cinema</Navbar.Brand>
+              />{" "}<Link 
+              className="navbar-brand" 
+              to="/"
+          >
+              Calidad Cinema
+          </Link></Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
@@ -31,8 +41,18 @@ export const NavBar = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Destacadas</Nav.Link>
-              <Nav.Link href="#action2">Estrenos</Nav.Link>
+              <NavLink 
+                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
+                        to="/destacados"
+                    >
+                        Destacados
+                    </NavLink>
+              <NavLink 
+                        className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
+                        to="/estrenos"
+                    >
+                        Estrenos
+                    </NavLink>
               <NavDropdown title="Generos" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Acción</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
@@ -60,7 +80,14 @@ export const NavBar = () => {
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
-              />{" "}Salir</Navbar.Brand>
+              />{" "}
+              <Button
+                onClick={handleLoginout}
+              >
+              Salir
+              </Button>
+              
+              </Navbar.Brand>
         </Container>
       </Navbar>
 
