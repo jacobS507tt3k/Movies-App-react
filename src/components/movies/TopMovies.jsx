@@ -1,28 +1,23 @@
-import React from 'react';
-import { useFetchMovies } from '../hooks/useFetchMovies';
-import { MoviesCard } from './MoviesCard';
-
-
+import React from "react";
+import { Row, Col } from "react-bootstrap";
+import { useFetchMovies } from "../hooks/useFetchMovies";
+import { MoviesCard } from "./MoviesCard";
 
 export const TopMovies = () => {
-
   const newMovies = {
-    val:"/movie/popular"
-  }
-   const {results} = useFetchMovies(newMovies);
+    val: "/movie/popular",
+  };
+  const { results } = useFetchMovies(newMovies);
 
   return (
-      <div>
-        
-            {
-              results.map((data) => (
-                 <MoviesCard 
-                  key={data.id}
-                  {...data}
-                 />
-              ))
-            }
-
-      </div>
+    <div>
+      <Row xs={1} md={4} className="g-4">
+        {results.map((data) => (
+          <Col className="">
+            <MoviesCard key={data.id} {...data} />
+          </Col>
+        ))}
+      </Row>
+    </div>
   );
 };
