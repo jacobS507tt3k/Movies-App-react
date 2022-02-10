@@ -107,8 +107,8 @@ export const NavBar = () => {
               Buscar
           </Button>
             </Form>
-          </Navbar.Collapse>
-          <Navbar.Brand href="#"><img
+          <Navbar.Brand>
+            <Nav.Link href="#features"><img
                 alt=""
                 src={logOut}
                 width="30"
@@ -119,9 +119,9 @@ export const NavBar = () => {
                 onClick={handleLoginout}
               >
               Salir
-              </Button>
-              
+              </Button></Nav.Link>
               </Navbar.Brand>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
