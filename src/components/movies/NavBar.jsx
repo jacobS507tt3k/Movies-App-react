@@ -48,7 +48,7 @@ export const NavBar = () => {
   return (
     <div>
 
-      <Navbar className="navigation_bar fw-bold" bg="dark" expand="lg" variant="dark">
+      <Navbar collapseOnSelect className="navigation_bar fw-bold" bg="dark" expand="lg" variant="dark">
         <Container fluid>
           <Navbar.Brand ><img
                 alt=""
@@ -62,8 +62,8 @@ export const NavBar = () => {
           >
               Calidad Cinema
           </Link></Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
             <Nav
               className="me-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
@@ -81,7 +81,7 @@ export const NavBar = () => {
                     >
                         Estrenos
                     </NavLink>
-              <NavDropdown title="Generos" id="navbarScrollingDropdown">
+              <NavDropdown title="Generos" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#action3">Acción</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">
                   Ficción
@@ -91,6 +91,11 @@ export const NavBar = () => {
                   Zombies
                 </NavDropdown.Item>
               </NavDropdown>
+
+              <NavLink className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
+                        to="/mapas">
+                Mapa de cines
+              </NavLink>
             </Nav>
             <Form onSubmit={handleInputSearch} className="d-flex mx-auto">
               <FormControl
