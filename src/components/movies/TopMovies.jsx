@@ -8,15 +8,18 @@ export const TopMovies = () => {
     val: "/movie/popular",
   };
   const { results } = useFetchMovies(newMovies);
-
+  
   return (
     <div>
       <Row xs={1} md={4} className="g-4">
-        {results.map((data) => (
+        
+        {
+        results.map((data) => (
           <Col className="">
             <MoviesCard key={data.id} {...data} />
           </Col>
-        ))}
+        ))
+        }
       </Row>
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
 
 
-export const MoviesCard = ({title, overview, image, release_date}) => {
+export const MoviesCard = ({title, overview, image, release_date, id}) => {
 
   const imagen =`https://image.tmdb.org/t/p/w500/${image}`
   return (
@@ -18,7 +18,7 @@ export const MoviesCard = ({title, overview, image, release_date}) => {
         </Card.Body>
         <ListGroup className="list-group-flush">
           <ListGroupItem>Fecha de lanzamiento: {release_date}</ListGroupItem>
-          <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+          <ListGroupItem>{id}</ListGroupItem>
           <ListGroupItem>Vestibulum at eros</ListGroupItem>
         </ListGroup>
         <Card.Body>

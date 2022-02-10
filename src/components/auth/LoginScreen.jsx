@@ -62,7 +62,7 @@ export const LoginScreen = () => {
                 <input
                   type="password"
                   className="form-control"
-                  name="email"
+                  name="password"
                   value={password}
                   onChange={handleInputChange}
                 />

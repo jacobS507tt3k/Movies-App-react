@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import {
   Nav,
   Container,
@@ -8,21 +8,46 @@ import {
   FormControl,
   Button,
 } from "react-bootstrap";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { Link, NavLink } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import { startLogout } from "../../actions/auth";
+import { buscarMovie, searchMovie } from "../../actions/uiCards";
+import { useForm } from "../hooks/useForm";
 
 export const NavBar = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [formSearch, handleInputChange] = useForm({
+    buscar:"hulk"
+  })
+  const {buscar} = formSearch
+  
+  const {name} = useSelector(state => state.auth);
     const logoApp = "../assets/logoApp.png";
     const logOut = "../assets/logout.png";
 
     const handleLoginout = () => {
       dispatch(startLogout())
     }
+    
+  
+    
+    const handleInputSearch = (e) => {
+      console.log(buscar)
+      e.preventDefault();
+      navigate(`buscar`)
+        dispatch(buscarMovie(buscar));
+      }
+
+      
+
+
   return (
     <div>
+
       <Navbar className="navigation_bar fw-bold" bg="dark" expand="lg" variant="dark">
         <Container fluid>
           <Navbar.Brand ><img
@@ -67,14 +92,20 @@ export const NavBar = () => {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Form className="d-flex mx-auto">
+            <Form onSubmit={handleInputSearch} className="d-flex mx-auto">
               <FormControl
+              as="input"
                 type="search"
                 placeholder="Buscar"
                 className="me-2"
                 aria-label="Search"
+                name="buscar"
+                value={buscar}
+                onChange={handleInputChange}
               />
-              <Button variant="outline-success">Buscar</Button>
+              <Button type="submit" variant="outline-success" >
+              Buscar
+          </Button>
             </Form>
           </Navbar.Collapse>
           <Navbar.Brand href="#"><img
@@ -98,3 +129,6 @@ export const NavBar = () => {
     </div>
   );
 };
+
+
+

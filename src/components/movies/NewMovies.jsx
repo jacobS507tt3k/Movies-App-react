@@ -9,7 +9,7 @@ export const NewMovies = () => {
   };
 
   const { results } = useFetchMovies(upcoming);
-
+  
   return (
     <div>
       <Row xs={1} md={4} className="g-4">

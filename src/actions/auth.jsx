@@ -13,6 +13,7 @@ export const startLoginEmailPassword = (email, password) => {
         
         firebase.auth().signInWithEmailAndPassword( email, password )
             .then( ({ user }) => {
+                
                 dispatch(login( user.uid, user.displayName ));
 
                 dispatch( finishLoading() );
@@ -56,7 +57,7 @@ export const startGoogleLogin = () => {
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
-                dispatch(
+                 dispatch(
                     login( user.uid, user.displayName )
                 )
             });

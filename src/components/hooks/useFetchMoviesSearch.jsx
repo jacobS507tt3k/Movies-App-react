@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-import { getMovies } from '../../helpers/getMovies';
+import { getMoviesSearch } from '../../helpers/getMoviesSearch';
 
 
 
-export const useFetchMovies=(val)=>{
+export const useFetchMoviesSearch=(val)=>{
     const [state, setState] = useState({
         results: [],
         loading: true,
     });
     
     useEffect(()=>{
-      getMovies(val)
+      getMoviesSearch(val)
       .then((datos)=>{
             setState({
                 results: datos,
