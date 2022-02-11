@@ -93,7 +93,7 @@ export const NavBar = () => {
               </NavDropdown>
 
               <NavLink className={ ({ isActive }) => 'nav-item nav-link ' + (isActive ? 'active' : '') }
-                        to="/mapas">
+                        to="/mapa">
                 Mapa de cines
               </NavLink>
             </Nav>

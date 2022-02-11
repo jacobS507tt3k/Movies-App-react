@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { SimpleMap,  } from '../components/maps/mapaScreen';
 import { MoviesList } from '../components/movies/MoviesList';
 
 import { NavBar } from '../components/movies/NavBar';
@@ -16,6 +17,8 @@ export const DashboardRoutes = () => {
                     <Route path="destacados" element={<TopMovies />} />
                     <Route path="estrenos" element={<NewMovies />} />
                     <Route path="buscar" element={<MoviesList />} />
+                    <Route path="mapa" element={<SimpleMap />} />
+
 {/* 
                     <Route path="search" element={<SearchScreen />} />
                     <Route path="hero/:heroeId" element={<HeroScreen />} /> */}
