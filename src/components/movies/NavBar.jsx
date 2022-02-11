@@ -22,7 +22,7 @@ export const NavBar = () => {
   const navigate = useNavigate();
 
   const [formSearch, handleInputChange] = useForm({
-    buscar: "hulk",
+    buscar: "",
   });
   const { buscar,  } = formSearch;
 

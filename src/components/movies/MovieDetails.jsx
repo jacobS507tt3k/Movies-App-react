@@ -2,7 +2,7 @@ import React from "react";
 import {MDBCol ,  MDBCard, MDBCardImage, MDBCardBody, MDBCardTitle, MDBCardText, MDBCardLink, MDBListGroup, MDBListGroupItem } from 'mdb-react-ui-kit';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
-export const MoviesCard = ({title, overview, image, release_date, id}) => {
+export const MovieDetails = ({title, overview, image, release_date, id}) => {
 
   const imagen =`https://image.tmdb.org/t/p/w500/${image}`
   return (
@@ -18,12 +18,11 @@ export const MoviesCard = ({title, overview, image, release_date, id}) => {
       </MDBCardBody>
       <MDBListGroup flush>
         <MDBListGroupItem>Fecha de lanzamineto: {release_date}</MDBListGroupItem>
-        <MDBListGroupItem>Dapibus ac facilisis in</MDBListGroupItem>
+        <MDBListGroupItem>Genero:</MDBListGroupItem>
         <MDBListGroupItem>Vestibulum at eros</MDBListGroupItem>
       </MDBListGroup>
       <MDBCardBody>
-        <MDBCardLink href='#'>Ver más ...</MDBCardLink>
-        <MDBCardLink href='#'>Card link</MDBCardLink>
+        <MDBCardLink >Ver más ...</MDBCardLink>
       </MDBCardBody>
     </MDBCard>
     </MDBCol>

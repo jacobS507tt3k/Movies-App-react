@@ -33,7 +33,10 @@ export const getMovies = async ({val}) => {
           overview: data.overview,
           image: data.poster_path,
           id: data.id,
-          release_date: data.release_date
+          release_date: data.release_date,
+          votes: data.vote_average, 
+          genero: data.genre_ids,
+          
         }
     })
 

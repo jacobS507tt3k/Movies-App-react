@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import { login } from "../actions/auth";
 import { AuthScreen } from "../components/auth/AuthScreen";
+import { MDBSpinner } from 'mdb-react-ui-kit';
 
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoute } from "./PrivateRoute";
@@ -18,9 +19,15 @@ export const AppRouter = () => {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const [token, setToken] = useState("")
+
   useEffect(() => {
       firebase.auth().onAuthStateChanged( async (user) => {
           if(user?.uid){
+              user.getIdTokenResult().then((token)=>{
+                setToken(token);
+              })
+              
               dispatch(login(user.uid, user.displayName));
               setIsLoggedIn(true);
 
@@ -36,7 +43,10 @@ export const AppRouter = () => {
 
   if(checking){
       return (
-          <h1>Please wait...</h1>
+        <div className='d-flex align-items-center'>
+      <strong>Cargando...</strong>
+      <MDBSpinner className='ms-auto ' role='status' style={{ width: '4rem', height: '4rem' }} />
+    </div>
       );
   }
 

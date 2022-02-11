@@ -10,10 +10,6 @@ export const MoviesList = () => {
   console.log(buscar)
   const { results } = useFetchMoviesSearch(buscar);
   console.log(results)
-
-  useEffect(() => {
-   
-  }, [results])
   
   return (
     <div>

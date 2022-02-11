@@ -27,7 +27,7 @@ export const AuthScreen = () => {
 
     const {msgError} = useSelector(state=>state.err);
 
-  console.log(msgError);  
+  //console.log(msgError);  
   const [valuesRegister, handleInputRegister] =useForm({
       namer:"",
       emailr: "",
