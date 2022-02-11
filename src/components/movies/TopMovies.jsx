@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { MDBRow} from 'mdb-react-ui-kit';
 import { useFetchMovies } from "../hooks/useFetchMovies";
 import { MoviesCard } from "./MoviesCard";
 
@@ -10,17 +10,15 @@ export const TopMovies = () => {
   const { results } = useFetchMovies(newMovies);
   
   return (
+
     <div>
-      <Row xs={1} md={4} className="g-4">
-        
-        {
-        results.map((data) => (
-          <Col className="">
+      <MDBRow >
+        {results.map((data) => (
+          
             <MoviesCard key={data.id} {...data} />
-          </Col>
-        ))
-        }
-      </Row>
+         
+        ))}
+       </MDBRow>
     </div>
   );
 };

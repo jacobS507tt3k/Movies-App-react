@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 import { login } from "../actions/auth";
+import { AuthScreen } from "../components/auth/AuthScreen";
 
-import { AuthRouter } from "./AuthRouter";
 import { DashboardRoutes } from "./DashboardRoutes";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
@@ -44,16 +44,20 @@ export const AppRouter = () => {
 
     <BrowserRouter>
         <Routes>
+
+
+        <Route path="/login" element={
+            <PublicRoute isAuth={isLoggedIn}>
+            <AuthScreen />
+            </PublicRoute>}/>
+
             <Route path="/*" element={
             <PrivateRoute isAuth={isLoggedIn}>
             <DashboardRoutes />
             </PrivateRoute>
             }/>
 
-            <Route path="/auth/*" element={
-            <PublicRoute isAuth={isLoggedIn}>
-            <AuthRouter />
-            </PublicRoute>}/>
+        
             
             <Route path="*" element={<Navigate to="/" />}/>
 

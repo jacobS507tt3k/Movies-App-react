@@ -11,8 +11,8 @@ export const DashboardRoutes = () => {
     return (
         <>
             <NavBar />
-
-            <div className="container">
+            <div className="card_space">
+            <div className="container mt-4">
                 <Routes>
                     <Route path="destacados" element={<TopMovies />} />
                     <Route path="estrenos" element={<NewMovies />} />
@@ -26,6 +26,7 @@ export const DashboardRoutes = () => {
                     <Route path="*" element={<TopMovies />} />
 
                 </Routes>
+            </div>
             </div>
         </>
     )

@@ -21,7 +21,7 @@ export const startLoginEmailPassword = (email, password) => {
             .catch( e => {
                 console.log(e);
                 dispatch( finishLoading() );
-                Swal.fire("Error", e.message, "error");
+                //Swal.fire("Error", e.message, "error");
             })
 
         
