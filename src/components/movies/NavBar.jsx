@@ -24,7 +24,7 @@ export const NavBar = () => {
   const [formSearch, handleInputChange] = useForm({
     buscar: "hulk",
   });
-  const { buscar } = formSearch;
+  const { buscar,  } = formSearch;
 
   const { name } = useSelector((state) => state.auth);
   const logoApp = "../assets/logoApp.png";
@@ -117,13 +117,6 @@ export const NavBar = () => {
               </Navbar.Text>
               </Nav>
               <Nav.Link href="#features">
-                <img
-                  alt=""
-                  src={logOut}
-                  width="30"
-                  height="30"
-                  className="d-inline-block align-top"
-                />{" "}
                 <Button onClick={handleLoginout}>Salir</Button>
               </Nav.Link>
             </Navbar.Brand>

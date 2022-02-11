@@ -12,7 +12,7 @@ export const TopMovies = () => {
   return (
 
     <div>
-      <MDBRow >
+      <MDBRow className="animate__animated animate__slideInLeft">
         {results.map((data) => (
           
             <MoviesCard key={data.id} {...data} />

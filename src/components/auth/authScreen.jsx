@@ -25,9 +25,9 @@ export const AuthScreen = () => {
 
    //registro 
 
-  /*  const {msgError} = useSelector(state=>state);
+    const {msgError} = useSelector(state=>state.err);
 
-  console.log(msgError);  */
+  console.log(msgError);  
   const [valuesRegister, handleInputRegister] =useForm({
       namer:"",
       emailr: "",
@@ -40,13 +40,13 @@ export const AuthScreen = () => {
   const handleRegister =(e)=> {
       e.preventDefault();
 
-      /* if(isFormValid()){ */
+       if(isFormValid()){ 
           dispatch(startLoginEmailPassword(emailr,passwordr,namer));
           console.log("Formulario correcto");
-     /*  }
-       */
+      }
+       
   }
-/* 
+
   const isFormValid = ()=>{
 
       if(namer.trim().length === 0){
@@ -63,12 +63,10 @@ export const AuthScreen = () => {
 
       dispatch(removeError());
       return true;
-  } */
+  } 
 
 
  //inicio sesión
-  const fLogo = "../assets/facebook.png";
-  const gLogo = "../assets/google.png";
 
   const dispatch = useDispatch();
 
@@ -130,27 +128,6 @@ export const AuthScreen = () => {
       <MDBTabsContent>
         <MDBTabsPane show={loginRegisterActive === 'login'}>
           <form onSubmit={handleLogin}>
-            <div className='text-center mb-3'>
-              <p>Sign up with:</p>
-
-              <MDBBtn floating className='mx-1' onClick={handleFacebookLogin}>
-                <MDBIcon fab icon='facebook-f' />
-              </MDBBtn>
-
-              <MDBBtn floating className='mx-1'>
-                <MDBIcon fab icon='google' onClick={handleGoogleLogin}/>
-              </MDBBtn>
-
-              <MDBBtn floating className='mx-1'>
-                <MDBIcon fab icon='twitter' />
-              </MDBBtn>
-
-              <MDBBtn floating className='mx-1'>
-                <MDBIcon fab icon='github' />
-              </MDBBtn>
-            </div>
-
-            <p className='text-center'>or:</p>
 
             <MDBInput className='mb-4' type='email' id='form7Example1' label='Email address' name="lemail"
                   value={lemail}
@@ -171,13 +148,25 @@ export const AuthScreen = () => {
             <MDBBtn type='submit' className='mb-4' block>
               Sign in
             </MDBBtn>
+          </form>
+          <p className='text-center'>or:</p>
+          <div className='text-center mb-3'>
+              <p>Sign up with:</p>
+
+              <MDBBtn floating className='mx-1' onClick={handleFacebookLogin}>
+                <MDBIcon fab icon='facebook-f' />
+              </MDBBtn>
+
+              <MDBBtn floating className='mx-1'>
+                <MDBIcon fab icon='google' onClick={handleGoogleLogin}/>
+              </MDBBtn>
+            </div>
 
             <div className='text-center'>
               <p>
                 Not a member? <a href='#!'>Register</a>
               </p>
             </div>
-          </form>
         </MDBTabsPane>
         <MDBTabsPane show={loginRegisterActive === 'register'}>
           <form onClick={handleRegister}>

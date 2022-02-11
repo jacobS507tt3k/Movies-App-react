@@ -11,7 +11,7 @@ export const DashboardRoutes = () => {
     return (
         <>
             <NavBar />
-            <div className="card_space">
+            <div className="card_space animate__animated animate__zoomIn">
             <div className="container mt-4">
                 <Routes>
                     <Route path="destacados" element={<TopMovies />} />

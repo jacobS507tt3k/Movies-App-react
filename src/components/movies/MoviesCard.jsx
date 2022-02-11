@@ -7,13 +7,13 @@ export const MoviesCard = ({title, overview, image, release_date, id}) => {
   const imagen =`https://image.tmdb.org/t/p/w500/${image}`
   return (
     <>
-    <MDBCol  className="mt-4 mb-4 col-lg-3" >
+    <MDBCol  className="mt-4 mb-4 col-lg-3 " >
     <MDBCard className="" /* style={{ width: '10rem' }} */>
       <MDBCardImage position='top' alt='...' src={imagen} />
       <MDBCardBody>
         <MDBCardTitle>{title}</MDBCardTitle>
         <MDBCardText >
-          {overview}
+          Descripción: Ver más ...
         </MDBCardText>
       </MDBCardBody>
       <MDBListGroup flush>

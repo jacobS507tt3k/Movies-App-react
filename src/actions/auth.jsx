@@ -21,7 +21,7 @@ export const startLoginEmailPassword = (email, password) => {
             .catch( e => {
                 console.log(e);
                 dispatch( finishLoading() );
-                //Swal.fire("Error", e.message, "error");
+                Swal.fire("Error", e.message, "error");
             })
 
         
@@ -57,8 +57,9 @@ export const startGoogleLogin = () => {
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
+                console.log(user)
                  dispatch(
-                    login( user.uid, user.displayName )
+                    login( user.uid, user.displayName, user.photoURL )
                 )
             });
 
@@ -80,11 +81,12 @@ export const startFacebookLogin = () => {
 }
 
 
-export const login = (uid, displayName) => ({
+export const login = (uid, displayName, foto) => ({
     type: types.login,
     payload: {
         uid,
-        displayName
+        displayName,
+        foto,
     }
 });
 

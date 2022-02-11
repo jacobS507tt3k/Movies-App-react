@@ -23,7 +23,7 @@ export const getMovies = async ({val}) => {
   const topMovies = "/movie/popular"
   const upComing = "/movie/upcoming"
     const imagePoster="https://image.tmdb.org/t/p/w500";
-  const url = `https://api.themoviedb.org/3${val}?api_key=${api_key}&language=en-US&page=1`;
+  const url = `https://api.themoviedb.org/3${val}?api_key=${api_key}&language=es-ES&page=1`;
     const resp = await fetch(url);
     const {results} = await resp.json();
 

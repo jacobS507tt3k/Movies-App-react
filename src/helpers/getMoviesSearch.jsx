@@ -19,7 +19,7 @@ export const getMoviesSearch = async (val) => {
   return getData;  */
 
     const imagePoster="https://image.tmdb.org/t/p/w500";
-  const url = `https://api.themoviedb.org/3/search/movie?api_key=ab4fa6c567cff55f31d06f6ad9fb0ed4&query=${val}`;
+  const url = `https://api.themoviedb.org/3/search/movie?api_key=ab4fa6c567cff55f31d06f6ad9fb0ed4&language=es-ES&query=${val}`;
     const resp = await fetch(url);
     const {results} = await resp.json();
 
