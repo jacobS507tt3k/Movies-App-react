@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useFetchMoviesSearch } from "../hooks/useFetchMoviesSearch";
+import { useFetchMoviesSearch } from "../hooks/useFetchMoviesAPI";
 import { MDBRow} from 'mdb-react-ui-kit';
 import { MoviesCard } from './MoviesCard';
 
