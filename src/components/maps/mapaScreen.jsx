@@ -3,6 +3,7 @@
 import React from "react";
 import GoogleMapReact from 'google-map-react';
 
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export const SimpleMap= () =>{
@@ -26,7 +27,7 @@ export const SimpleMap= () =>{
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-
+        
 
         <AnyReactComponent
           lat={59.955413}

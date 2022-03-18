@@ -1,5 +1,5 @@
 import { useDispatch, useSelector} from "react-redux";
-import { startLoginEmailPassword, startGoogleLogin, startFacebookLogin } from "../../actions/auth";
+import { startLoginEmailPassword, startGoogleLogin, startFacebookLogin,startRegisterWithEmailPasswordName } from "../../actions/auth";
 import { useForm } from "../hooks/useForm";
 import { useState } from "react";
 import validator from "validator";
@@ -41,7 +41,7 @@ export const AuthScreen = () => {
       e.preventDefault();
 
        if(isFormValid()){ 
-          dispatch(startLoginEmailPassword(emailr,passwordr,namer));
+          dispatch(startRegisterWithEmailPasswordName(emailr,passwordr,namer));
           console.log("Formulario correcto");
       }
        
@@ -106,6 +106,11 @@ export const AuthScreen = () => {
     
     <div className='d-flex justify-content-center mt-5'>
     <div style={{ width: '26rem' }} >
+    <div className='text-center'>
+              <p>
+                MOVIES CINEMA
+              </p>
+            </div>
       <MDBTabs pills justify className='mb-3 '>
         <MDBTabsItem>
           <MDBTabsLink
